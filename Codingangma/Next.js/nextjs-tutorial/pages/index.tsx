@@ -11,8 +11,9 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true); //api 호출이 끝나면 다시 false로 바꾸기
-  const API_URL =
-    "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
+    ? process.env.NEXT_PUBLIC_API_URL
+    : "";
 
   function getData() {
     Axios.get(API_URL).then((res) => {
@@ -31,6 +32,7 @@ export default function Home() {
         <Head>
           {" "}
           <title>HOME | 코딩앙마</title>{" "}
+          <meta name="description" content="코딩 앙마 홈입니다."></meta>
         </Head>
         {isLoading && (
           <div style={{ padding: "300px 0" }}>

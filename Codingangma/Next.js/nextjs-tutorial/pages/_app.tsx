@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div style={{ width: 1000, margin: "0 auto" }}>
       <Top />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
       <Footer />
     </div>
   );

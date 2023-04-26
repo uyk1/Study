@@ -1,7 +1,8 @@
 import { Button, Header } from "semantic-ui-react";
 import styles from "./Item.module.css";
 
-export default function Item({ item }) {
+export default function Item(item: any) {
+  const thisItem = item.item;
   const {
     name,
     image_link,
@@ -11,7 +12,8 @@ export default function Item({ item }) {
     category,
     product_type,
     product_link,
-  } = item;
+  } = thisItem;
+  console.log(thisItem);
   return (
     <>
       <div className={styles.wrap}>

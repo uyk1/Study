@@ -2,12 +2,14 @@ import { Grid, Image } from "semantic-ui-react";
 import styles from "./ItemList.module.css";
 import Link from "next/link";
 
-export default function ItemList({ list }) {
+export default function ItemList(list: any) {
+  console.log("list: ", list);
+  const itemList = list.list;
   return (
     <div>
       <Grid columns={3}>
         <Grid.Row>
-          {list.map((item) => (
+          {itemList.map((item: any) => (
             <Grid.Column key={item.id}>
               <Link href={`/view/${item.id}`}>
                 <div className={styles.wrap}>
